@@ -52,7 +52,7 @@ jobs:
         shell: bash
       - if: steps.packagejson.outputs.exists == 'true'
         name: Check package-lock version
-        uses: ayushnau/.github/.github/actions/get-node-version-from-package-lock@master
+        uses: https://github.com/ayushnau/.github/.github/actions/get-node-version-from-package-lock@master
         id: lockversion
       - if: steps.packagejson.outputs.exists == 'true'
         name: Setup Node.js
