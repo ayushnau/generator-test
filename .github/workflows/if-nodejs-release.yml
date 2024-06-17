@@ -118,7 +118,19 @@ jobs:
           version: npm run version-packages
           commit: "version packages"
           title: "chore: version packages"
-
+        run: test -e ./package.json && echo "exists=true" >> $GITHUB_OUTPUT || echo "exists=false" >> $GITHUB_OUTPUT
+      - name: Check if Node.js project and has package.json
+          id: packagejson
+          run: |
+            if test -e./package.json; then
+              echo "Package.json exists."
+              git remote -v
+              echo "::set-output name=exists::true"
+            else
+              echo "Package.json does not exist."
+              echo "::set-output name=exists::false"
+            fi
+          shell: bash
       - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
         name: Report workflow run status to Slack
         uses: 8398a7/action-slack@v3
