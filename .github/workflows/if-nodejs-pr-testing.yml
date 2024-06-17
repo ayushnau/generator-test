@@ -19,19 +19,7 @@ jobs:
         os: [ubuntu-latest, macos-13, windows-latest]
     steps:
       - if: >
-          !github.event.pull_request.draft && !(
-            (github.actor == 'asyncapi-bot' && (
-              startsWith(github.event.pull_request.title, 'ci: update of files from global .github repo') ||
-              startsWith(github.event.pull_request.title, 'chore(release):')
-            )) ||
-            (github.actor == 'asyncapi-bot-eve' && (
-              startsWith(github.event.pull_request.title, 'ci: update of files from global .github repo') ||
-              startsWith(github.event.pull_request.title, 'chore(release):')
-            )) ||
-            (github.actor == 'allcontributors[bot]' &&
-              startsWith(github.event.pull_request.title, 'docs: add')
-            )
-          )
+          true
         id: should_run
         name: Should Run
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
@@ -52,7 +40,7 @@ jobs:
         shell: bash
       - if: steps.packagejson.outputs.exists == 'true'
         name: Check package-lock version
-        uses: https://github.com/ayushnau/.github/.github/actions/get-node-version-from-package-lock@master
+        uses: ayushnau/generator-test/.github/.github/actions/get-node-version-from-package-lock@master
         id: lockversion
       - if: steps.packagejson.outputs.exists == 'true'
         name: Setup Node.js
