@@ -17,7 +17,9 @@
     "docs": {},
     "docker:build": {},
     "lint": {},
-    "lint:tpl:validator": {}
+    "lint:tpl:validator": {},
+    "publish-packages": {},
+    "version-packages": {}
   },
   "experimentalUI": true
 }
