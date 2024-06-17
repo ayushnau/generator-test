@@ -1,5 +1,5 @@
 {
-  "name": "@asyncapi/generator",
+  "name": "@ayushnautiyal706020/generator-test",
   "version": "2.0.1",
   "description": "The AsyncAPI generator. It can generate documentation, code, anything!",
   "main": "./lib/generator.js",
