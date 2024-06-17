@@ -109,10 +109,10 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIT_AUTHOR_NAME: asyncapi-bot
-          GIT_AUTHOR_EMAIL: info@asyncapi.io
-          GIT_COMMITTER_NAME: asyncapi-bot
-          GIT_COMMITTER_EMAIL: info@asyncapi.io
+          GIT_AUTHOR_NAME: ayushnau
+          GIT_AUTHOR_EMAIL: ayushnautiyaldevelopr@gmail.com
+          GIT_COMMITTER_NAME: ayushnau
+          GIT_COMMITTER_EMAIL: ayushnautiyaldevelopr@gmail.com
         with:
           publish: npm run publish-packages
           version: npm run version-packages
