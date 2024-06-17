@@ -40,7 +40,7 @@ jobs:
         shell: bash
       - if: steps.packagejson.outputs.exists == 'true'
         name: Check package-lock version
-        uses: ayushnau/generator-test/.github/.github/actions/get-node-version-from-package-lock@master
+        uses: "1.0.0"
         id: lockversion
       - if: steps.packagejson.outputs.exists == 'true'
         name: Setup Node.js
